@@ -24,7 +24,19 @@
 
     <!-- embed external JavaScript file for app interaction -->
     <script src="js/script.js"></script>
+<script>
 
+    $(function() {
+    listChannels(compareNew);
+    loadEmojis();
+    showMessages();
+    
+    setInterval(update,10000);
+    update();
+
+  });
+
+</script>
 
 </head>
 

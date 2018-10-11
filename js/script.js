@@ -439,12 +439,3 @@ mess2=new Message('Wohooo, I threw up again!');
 yummy.messages.push(mess1);
 octoberfest.messages.push(mess2);
 
-$(function() {
-    listChannels(compareNew);
-    loadEmojis();
-    showMessages();
-    
-    setInterval(update,10000);
-    update();
-
-  });
