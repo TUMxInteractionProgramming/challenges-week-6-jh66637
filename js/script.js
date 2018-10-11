@@ -392,7 +392,7 @@ function showMessages(){
     //     $('#messages').append(createMessageElement(currentChannel.messages[i]));
     // }
     $.each(currentChannel.messages, function(i, value){
-        createMessageElement(value);
+        //createMessageElement(value);
         $('#messages').append(value.html);
     })
 
@@ -436,6 +436,9 @@ function update(){
 
 mess1=new Message('Watching Chefs Table makes me feel hungry');
 mess2=new Message('Wohooo, I threw up again!');
+createMessageElement(mess1);
+createMessageElement(mess2);
+
 yummy.messages.push(mess1);
 octoberfest.messages.push(mess2);
 
