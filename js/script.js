@@ -110,9 +110,18 @@ function toggleEmojis() {
 /* #10 #add ing #emojis with this function and calling it in the body's onload event listener is more #suitable */
 function loadEmojis() {
     var emojis = require('emojis-list');
-    $('#emojis').empty();
+
+    var div = $('<div id="emojis">').addClass('shadow--8dp').appendTo('#emojisuff');
+
     for (emoji in emojis) {
-        $('#emojis').append(emojis[emoji] + " ");
+       var span = $('<span>').text(emojis[emoji] + " ");
+       span.appendTo(div);
+
+        $(span).click(function(){
+            //console.log(emojis[emoji] + 'emoji clicked');
+            $('#message').val($('#message').val()+$(this).html());
+        })
+
     }
 }
 
@@ -442,3 +451,24 @@ createMessageElement(mess2);
 yummy.messages.push(mess1);
 octoberfest.messages.push(mess2);
 
+$(function() {
+    listChannels(compareNew);
+    loadEmojis();
+    showMessages();
+
+        $("#message").keyup(function(event) {
+        if (event.keyCode === 13) {
+            $("#button-send").click();
+        }
+        });
+
+        $( "#message" ).keyup(function() {
+            // $('#message').val($('#message').val()+$(this).html());
+            var count = (140 - $('#message').val().length)
+            $('#counter').html(count);
+          });
+    
+    setInterval(update,10000);
+    update();
+
+  });

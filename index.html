@@ -24,19 +24,7 @@
 
     <!-- embed external JavaScript file for app interaction -->
     <script src="js/script.js"></script>
-<script>
 
-    $(function() {
-    listChannels(compareNew);
-    loadEmojis();
-    showMessages();
-    
-    setInterval(update,10000);
-    update();
-
-  });
-
-</script>
 
 </head>
 
@@ -166,8 +154,10 @@
             <i class="far fa-smile"></i>
         </button>
         <!-- #9 #shdw #elv: menu goes 8dp high -->
-        <div id="emojis" class="shadow--8dp">&#x1F601; &#x1F602; &#x1F603; &#x1F604; &#x1F605; &#x1F606; &#x1F607;</div>
+        <!-- <div id="emojis" class="shadow--8dp"></div> -->
+        <span id="emojisuff"></span>
         <input type="text" placeholder="Message..." maxlength="140" id="message">
+        <span id="counter">140</span>
         <!-- #9 #btns #snd now accented -->
         <!-- #10 #new: id added to be able to address it -->
         <button id="button-send" class="accent" onclick="sendMessage()"><i class="fas fa-arrow-right"></i></button>
